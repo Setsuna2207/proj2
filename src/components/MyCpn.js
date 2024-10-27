@@ -23,9 +23,16 @@ class MyCpn extends React.Component {
         })
     }
 
-    handleOnMouseOver(event) {
-        console.log("x = ", event.pageX);
-        console.log("y = ", event.pageY)
+    handleOnChangeInput = (event) => {
+        this.setState({
+            name: event.target.value //Thay thế value của biến name
+        })
+        console.log(event, event.target.value)
+    }
+
+    handleOnSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state)
     }
 
     //JSX
@@ -34,8 +41,13 @@ class MyCpn extends React.Component {
         return (
             <div>
                 My name is {this.state.name} and I'm {this.state.age}
-                <button onClick={(event) => { this.handleClick(event) }}>Click me</button>
-                <button onMouseOver={(event) => { this.handleOnMouseOver(event) }}>Hover me</button>
+                <form onSubmit={(event) => this.handleOnSubmit(event)}>
+                    <input
+                        type="text"
+                        onChange={(event) => this.handleOnChangeInput(event)}
+                    />
+                    <button>Submit</button>
+                </form>
             </div>
         );
     }
