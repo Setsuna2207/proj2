@@ -6,18 +6,26 @@ import DisplayInfo from "./DisplayInfo";
 
 class MyCpn extends React.Component {
 
+    state = {
+        listUser: [
+            { id: 1, name: "Tuýn", age: "20" },
+            { id: 2, name: "Trung", age: "20" },
+            { id: 3, name: "Huy", age: "20" }
+        ]
+    }
+
     //JSX
     //this: ánh xạ vào class đang sử dụng
     render() {
-        const myInfo = ['ab', 'c', 'd'];
-        // key: value
+        //DRY: Don't repeat yourself
         return (
             <div>
                 <UserInfo />
                 <br /><br />
-                <DisplayInfo name="Tuýn" age="20" />
+                <DisplayInfo
+                    listUser={this.state.listUser}
+                />
                 <hr />
-                <DisplayInfo name={"Trung"} age={21} myInfo ={myInfo}/>
             </div>
         );
     }

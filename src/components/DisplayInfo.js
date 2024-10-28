@@ -3,12 +3,22 @@ import React from "react";
 class DisplayInfo extends React.Component {
     render() {
         //destructuring array/object
-        const {age, name} = this.props; //object
+        const { listUser } = this.props; //object
+        // = const listUset = this.props.listUser
+        console.log(listUser)
         //props -> properties: tài sản 
+        //map là 1 function của JS
         return (
             <div>
-                <div>My name is {name}</div>
-                <div>My age is {age}</div>
+                {listUser.map((user, index) => {
+                    return (
+                        <div key = {user.id}>
+                            <div>My name is {user.name}</div>
+                            <div>My age is {user.age}</div>
+                            <hr />
+                        </div>
+                    )
+                })}
             </div>
 
         )
