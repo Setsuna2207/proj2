@@ -8,9 +8,9 @@ class MyCpn extends React.Component {
 
     state = {
         listUser: [
-            { id: 1, name: "Tuýn", age: "20" },
-            { id: 2, name: "Trung", age: "20" },
-            { id: 3, name: "Huy", age: "20" }
+            { id: 1, name: "Tuýn", age: "26" },
+            { id: 2, name: "Trung", age: "30" },
+            { id: 3, name: "Huy", age: "90" }
         ]
     }
 
